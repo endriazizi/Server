@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Backend with NodeJS, MongoDB, JWT for Angular 4 Client",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/endriazizi/Server.git"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Endri Azizi",
   "license": "MIT",
@@ -16,7 +17,6 @@
     "url": "https://github.com/endriazizi/Server/issues"
   },
   "homepage": "https://github.com/endriazizi/Server#readme",
-
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
