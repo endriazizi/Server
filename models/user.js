@@ -17,5 +17,6 @@ var UserSchema = Schema({
     password : String,
     role : String,
 });
+
 //A model for User-> obeject, a collection of objects
 module.exports = mongoose.model('User',  UserSchema);

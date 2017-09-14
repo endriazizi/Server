@@ -9,6 +9,7 @@ var port = process.env.PORT || 3000;
 
 
 mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://localhost:27017/zoo', { useMongoClient: true })
 mongoose.connect('mongodb://localhost:27017/zoo', { useMongoClient: true })
     .then(() => {
         console.log('connected to mongo database correctly!');

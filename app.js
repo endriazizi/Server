@@ -26,15 +26,14 @@ app.use(bodyParser.json());
 
 //basics routes
 //the middleware is /api - is the our API prefix
+//user_routes is declared at the begin
 app.use('/api', user_routes);
 //for example: http://localhost:3000/api/test-user-contoller
 
 
-
-
 //routes body-parser
-app.get('/test', (req, res) => {
-    res.status(200).send({message:'test method'});
-});
+/* app.get('/ciao', (req, res) => {
+    res.status(200).send({message:'CIAOOOO'});
+}); */
 
 module.exports =  app;

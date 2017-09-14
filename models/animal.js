@@ -14,7 +14,7 @@ var Schema = moongose.Schema;
 var AnimalSchema = Schema({
     name : String,
     description : String,
-    eyearmail : String,
+    year : String,
     image : String,
     //related to user
     user : {Type: Schema.ObjectId,ref: 'User'},
