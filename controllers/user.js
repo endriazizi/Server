@@ -41,10 +41,10 @@ function saveUser(req, res){
                 // see user at database
                 user.save((err, userStored)=> {
                     if (err){
-                        res.status(500).send({message:'Error at User'});
+                        res.status(500).send({message:'error saving user'});
                     }else{
                         if(!userStored){
-                            res.status(404).send({message:'User not registered'});
+                            res.status(404).send({message:'user not registered'});
                         }else{
                             res.status(200).send({user: userStored});
                         }
@@ -54,7 +54,7 @@ function saveUser(req, res){
         }   
             else{
                 res.status(200).send({
-                    message: 'User added corrsssectly'
+                    message: 'enter the data correctly to register the user'
             });
     }   
 } 
