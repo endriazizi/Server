@@ -5,7 +5,7 @@ var mongoose =require ('mongoose');
 var app= require('./app');
 //service port
 //up to you number of port
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3789;
 
 
 mongoose.Promise = global.Promise;
@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost:27017/zoo', { useMongoClient: true })
 
         //lunch service
         app.listen(port, () => {
-            console.log("Node and Express service is Working Correctly http://localhost:3000/api");
+            console.log("Node and Express service is Working Correctly http://localhost:3789/api");
             //on browser for APIRestFul http://localhost:3000/
             //right now we do not have any method
             // output Cannot Get /
