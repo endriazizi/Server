@@ -19,5 +19,6 @@ var AnimalSchema = Schema({
     //related to user
     user : {Type: Schema.ObjectId,ref: 'User'},
 });
+
 //A model for Animal-> obeject, a collection of objects
 module.exports = mongoose.model('Animal',  AnimalSchema);

@@ -92,7 +92,46 @@ function saveUser(req, res) {
 }
 
 
+function login(req, res){
+    var params =req.body;
+
+    var email = params.email;
+    var password = params.password;
+
+    //funzione calvac
+    User.findOne({email: email.toLowerCase()}, (err, user) => {
+        //if user not exist
+        if (err) {
+            res.status(500).send({
+                message: 'error user controller'
+            });
+        } else {
+            if (user) {
+                bcrypt.compare(password, user.password, (err, check)=>{
+                    //if check is true
+                    if(check){
+                        res.status(200).send({user});    
+                    }else{
+                        res.status(404).send({
+                            message: 'user can not log on correclty, password wrong!??'
+                        });
+                    }
+                });
+                
+            } else {
+                res.status(404).send({
+                    message: 'user can not log on'
+                });
+
+            }
+        }
+
+    });
+
+}
+
 module.exports = {
     test,
-    saveUser
+    saveUser,
+    login
 };

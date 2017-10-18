@@ -15,6 +15,7 @@ var api = express.Router();
 api.get('/test-user-contoller', UserController.test);
 
 api.post('/register', UserController.saveUser);
+api.post('/login', UserController.login);
 
 
 module.exports = api;
