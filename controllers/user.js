@@ -18,7 +18,8 @@ var jwt =require('../services/jwt')
 //method test
 function test(req, res) {
     res.status(200).send({
-        message: 'ROUTE TEST API'
+        message: 'ROUTE TEST API',
+        user: req.user
     });
 }
 
