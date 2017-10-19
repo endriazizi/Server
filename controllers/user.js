@@ -12,6 +12,9 @@ var bcrypt = require('bcrypt-nodejs');
 //models
 var User = require('../models/user');
 
+//service JWT
+var jwt =require('../services/jwt')
+
 //method test
 function test(req, res) {
     res.status(200).send({
@@ -92,6 +95,8 @@ function saveUser(req, res) {
 }
 
 
+
+
 function login(req, res){
     var params =req.body;
 
@@ -110,7 +115,19 @@ function login(req, res){
                 bcrypt.compare(password, user.password, (err, check)=>{
                     //if check is true
                     if(check){
-                        res.status(200).send({user});    
+                        //checking token
+                        if(params.gettoken){
+                            //send token jwt
+                            res.status(200).send({
+                                token: jwt.createToken(user)
+                            });
+                        }else{
+                            res.status(200).send({user});    
+                        }
+
+                        
+
+
                     }else{
                         res.status(404).send({
                             message: 'user can not log on correclty, password wrong!??'
