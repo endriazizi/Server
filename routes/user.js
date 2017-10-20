@@ -18,6 +18,8 @@ api.get('/test-user-contoller', middleware_auth.ensureAuth, UserController.test)
 
 api.post('/register', UserController.saveUser);
 api.post('/login', UserController.login);
+//PUT to update
+api.put('/update-user/:id', middleware_auth.ensureAuth, UserController.updateUser);
 
 
 module.exports = api;
